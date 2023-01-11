@@ -37,7 +37,7 @@ public class CurrencyRateParserXml implements CurrencyRateParser {
 
                 for (var valuteIdx = 0; valuteIdx < nodeList.getLength(); valuteIdx++) {
                     var node = nodeList.item(valuteIdx);
-                    if (node.getNodeType() == Node.ATTRIBUTE_NODE) {
+                    if (node.getNodeType() == Node.ELEMENT_NODE) {
                         var element = (Element) node;
 
                         var rate = CurrencyRate.builder()
