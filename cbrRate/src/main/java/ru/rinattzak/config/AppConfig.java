@@ -16,11 +16,11 @@ import java.time.LocalDate;
 @Configuration
 @EnableConfigurationProperties(CbrConfig.class)
 public class AppConfig {
-    private final CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder().build();
+    private final CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder().build(true);
 
     @Bean
     public Cache<LocalDate, CachedCurrencyRates> cachedCurrencyRatesCache(@Value("${app.cache.size}") int cacheSize) {
-        return cacheManager.createCache("CurrencyRateCache",
+        return cacheManager.createCache("CurrencyRate-Cache",
                 CacheConfigurationBuilder.newCacheConfigurationBuilder(LocalDate.class, CachedCurrencyRates.class,
                         ResourcePoolsBuilder.heap(cacheSize))
                         .build()
