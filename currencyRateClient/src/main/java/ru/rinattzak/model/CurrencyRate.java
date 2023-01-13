@@ -1,0 +1,21 @@
+package ru.rinattzak.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+import lombok.Value;
+
+@Value
+@Builder
+public class CurrencyRate {
+    String charCode;
+    String nominal;
+    String value;
+
+    public CurrencyRate(@JsonProperty("charCode") String charCode,
+                        @JsonProperty("nominal") String nominal,
+                        @JsonProperty("value") String value) {
+        this.charCode = charCode;
+        this.nominal = nominal;
+        this.value = value;
+    }
+}
