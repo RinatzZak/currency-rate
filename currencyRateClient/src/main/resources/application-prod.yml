@@ -1,0 +1,2 @@
+cbr-rate-client:
+  url: "http://cbr-rate.default.svc.cluster.local/api/v1/currencyRate"
