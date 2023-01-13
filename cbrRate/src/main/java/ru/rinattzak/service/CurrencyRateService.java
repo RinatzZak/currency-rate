@@ -41,7 +41,7 @@ public class CurrencyRateService {
             currencyRateList = cachedCurrencyRates.getCurrencyRateList();
         }
         return currencyRateList.stream()
-                .filter(currencyRate -> currencyRate.equals(currencyRate.getCharCode()))
+                .filter(currencyRate -> currency.equals(currencyRate.getCharCode()))
                 .findFirst()
                 .orElseThrow(() -> new CurrencyNotFoundException("Not found currency. Currency: " + currency + ", date: " + date));
     }
