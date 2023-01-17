@@ -17,4 +17,24 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>2.7.1</version>
+                <configuration>
+                    <container>
+                        <ports>8081</ports>
+                    </container>
+                    <from>
+                        <image>bellsoft/bellsoft/liberica-openjdk-alpine-musl:17.0.1-12</image>
+                    </from>
+                    <to>
+                        <image>registry.gitlab.com/zakirov1/dockerregistry/cbr-rate</image>
+                    </to>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
