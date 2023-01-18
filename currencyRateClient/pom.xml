@@ -28,7 +28,7 @@
                         <mainClass>ru.rinattzak.CurrencyRateClient</mainClass>
                     </container>
                     <from>
-                        <image>openjdk:alpine</image>
+                        <image>bellsoft/liberica-openjdk-alpine-musl:17.0.1-12</image>
                     </from>
                     <to>
                         <image>registry.gitlab.com/zakirov1/dockerregistry/currency-rate-client</image>
