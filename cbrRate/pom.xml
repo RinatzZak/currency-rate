@@ -26,9 +26,10 @@
                 <configuration>
                     <container>
                         <ports>8081</ports>
+                        <mainClass>ru.rinattzak.CbrRate</mainClass>
                     </container>
                     <from>
-                        <image>bellsoft/bellsoft/liberica-openjdk-alpine-musl:17.0.1-12</image>
+                        <image>openjdk:alpine</image>
                     </from>
                     <to>
                         <image>registry.gitlab.com/zakirov1/dockerregistry/cbr-rate</image>

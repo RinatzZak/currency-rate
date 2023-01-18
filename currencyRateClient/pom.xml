@@ -24,8 +24,11 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <version>2.7.1</version>
                 <configuration>
+                    <container>
+                        <mainClass>ru.rinattzak.CurrencyRateClient</mainClass>
+                    </container>
                     <from>
-                        <image>bellsoft/bellsoft/liberica-openjdk-alpine-musl:17.0.1-12</image>
+                        <image>openjdk:alpine</image>
                     </from>
                     <to>
                         <image>registry.gitlab.com/zakirov1/dockerregistry/currency-rate-client</image>
