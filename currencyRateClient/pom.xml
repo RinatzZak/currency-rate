@@ -22,17 +22,25 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>2.7.1</version>
+                <version>3.3.1</version>
                 <configuration>
                     <container>
+                        <ports>8080</ports>
                         <mainClass>ru.rinattzak.CurrencyRateClient</mainClass>
                     </container>
                     <from>
-                        <image>bellsoft/liberica-openjdk-alpine-musl:17.0.1-12</image>
+                        <image>openjdk:17-alpine</image>
                     </from>
                     <to>
-                        <image>registry.gitlab.com/zakirov1/dockerregistry/currency-rate-client</image>
+                        <image>registry.gitlab.com/zakirov1/dockerregistry/currency-rate-client2</image>
                     </to>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>17</release>
                 </configuration>
             </plugin>
         </plugins>
