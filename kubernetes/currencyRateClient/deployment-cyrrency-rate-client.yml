@@ -18,7 +18,7 @@ spec:
         app: currency-rate-client
     spec:
       containers:
-        - image: вот тут гитлаб
+        - image: registry.gitlab.com/zakirov1/dockerregistry/currency-rate-client2
           name: currency-rate-client
           ports:
             - containerPort: 8080
