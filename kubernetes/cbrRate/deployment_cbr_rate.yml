@@ -18,7 +18,7 @@ spec:
         app: cbr-rate
     spec:
       containers:
-        - image: вот тут гитлаб надо
+        - image: registry.gitlab.com/zakirov1/dockerregistry/cbr-rate
           name: cbr-rate
           ports:
             - containerPort: 8081
@@ -33,7 +33,7 @@ spec:
             periodSeconds: 10
             successThreshold: 1
             timeoutSeconds: 1
-            livenessProbe:
+          livenessProbe:
               failureThreshold: 3
               httpGet:
                 path: /actuator/health/liveness
@@ -42,5 +42,5 @@ spec:
               successThreshold: 1
               timeoutSeconds: 1
               initialDelaySeconds: 10
-            imagePullSecrets:
-              - name: regcred
+          imagePullSecrets:
+            - name: regcred
