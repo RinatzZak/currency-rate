@@ -22,7 +22,7 @@ spec:
           name: cbr-rate
           ports:
             - containerPort: 8081
-          envForm:
+          envFrom:
             - configMapRef:
                 name: currency-rate-config
           readinessProbe:
@@ -34,13 +34,13 @@ spec:
             successThreshold: 1
             timeoutSeconds: 1
           livenessProbe:
-              failureThreshold: 3
-              httpGet:
-                path: /actuator/health/liveness
-                port: 8091
-              periodSeconds: 10
-              successThreshold: 1
-              timeoutSeconds: 1
-              initialDelaySeconds: 10
-          imagePullSecrets:
-            - name: regcred
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8091
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+            initialDelaySeconds: 10
+      imagePullSecrets:
+        - name: regcred
