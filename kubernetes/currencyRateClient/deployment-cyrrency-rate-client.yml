@@ -43,4 +43,4 @@ spec:
             timeoutSeconds: 1
             initialDelaySeconds: 10
       imagePullSecrets:
-        - name: regcred
+        - name: rinatzak
