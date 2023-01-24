@@ -6,6 +6,7 @@
     <modules>
         <module>cbrRate</module>
         <module>currencyRateClient</module>
+        <module>currencyRateBot</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
