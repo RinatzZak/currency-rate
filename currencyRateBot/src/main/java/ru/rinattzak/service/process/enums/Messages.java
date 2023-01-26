@@ -6,8 +6,7 @@ public enum Messages {
                     Возможные команды ("/" не нужен):
                     Курс на дату: CBR USD dd-MM-yyyy
                     Курс ЦБ на дату: EUR dd-MM-yyyy
-                    Курс ЦБ на сегодня: USD
-                    """);
+                    Курс ЦБ на сегодня: USD""");
 
     private final String text;
 
