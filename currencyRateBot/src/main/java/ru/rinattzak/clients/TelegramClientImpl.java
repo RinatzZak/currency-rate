@@ -26,7 +26,7 @@ public class TelegramClientImpl implements TelegramClient {
             String params = objectMapper.writeValueAsString(request);
             log.info("params{}", params);
 
-            String responseAsString = httpClientJdk.performRequest(makeUrl(), params);
+            String responseAsString = httpClientJdk.performRequest(makeUrl("sendMessage"), params);
             log.info("responseAsString {}", responseAsString);
         } catch (JsonProcessingException e) {
             log.error("request{}", request);
@@ -40,7 +40,7 @@ public class TelegramClientImpl implements TelegramClient {
             String params = objectMapper.writeValueAsString(request);
             log.info("params{}", params);
 
-            String updatesAsString = httpClientJdk.performRequest(makeUrl(), params);
+            String updatesAsString = httpClientJdk.performRequest(makeUrl("getUpdates"), params);
             log.info("updatesAsString {}", updatesAsString);
             GetUpdateResponse updates = objectMapper.readValue(updatesAsString, GetUpdateResponse.class);
             log.info("updates - {}", updates);
@@ -52,8 +52,8 @@ public class TelegramClientImpl implements TelegramClient {
         }
     }
 
-    private String makeUrl() {
+    private String makeUrl(String request) {
         return String.format("%s/bot%s/%s", telegramClientConfig.getUrl(),
-                telegramClientConfig.getToken(), "getUpdates");
+                telegramClientConfig.getToken(), request);
     }
 }
