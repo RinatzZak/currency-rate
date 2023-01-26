@@ -15,7 +15,7 @@ public class HttpClientJdk implements HttpClient {
     public String performRequest(String url, String params) {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
-                .header("Content-type", "application/json")
+                .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(params))
                 .build();
         return doRequest(url, request);

@@ -13,13 +13,13 @@ import ru.rinattzak.service.process.MessageTextProcessor;
 @Slf4j
 public class TelegramServiceImpl implements TelegramService {
     private final TelegramClient telegramClient;
-    private final MessageTextProcessor messageTextProcessor;
+    private final MessageTextProcessor messageTextProcessorGeneral;
     private final LastUpdateIdKeeper lastUpdateIdKeeper;
 
     public TelegramServiceImpl(TelegramClient telegramClient, MessageTextProcessor messageTextProcessor,
                                LastUpdateIdKeeper lastUpdateIdKeeper) {
         this.telegramClient = telegramClient;
-        this.messageTextProcessor = messageTextProcessor;
+        this.messageTextProcessorGeneral = messageTextProcessor;
         this.lastUpdateIdKeeper = lastUpdateIdKeeper;
     }
 
@@ -56,7 +56,7 @@ public class TelegramServiceImpl implements TelegramService {
         long chatId = message.getChat().getId();
         long messageId = message.getMessageId();
 
-        MessageTextProcessorResult result = messageTextProcessor.process(message.getText());
+        MessageTextProcessorResult result = messageTextProcessorGeneral.process(message.getText());
         String replay = result.getFailReply() == null ? result.getOkReply() : result.getFailReply();
         SendMessageRequest request = new SendMessageRequest(chatId, replay, messageId);
         telegramClient.sendMessage(request);
